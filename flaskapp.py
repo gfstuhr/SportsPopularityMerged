@@ -109,7 +109,7 @@ def home():
     return """Available routes: 
             FILL IN AVAILABLE ROUTES LATER"""
 
-@app.route("/api/v1.0/sports_attendance")
+@app.route("/api/v1.0/sports_attendance/")
 def nfl_mlb_attendance():
     print("Server received request for NFL map page")
     ## In order to return multiple JSONs in one API endpoint, we have to 
