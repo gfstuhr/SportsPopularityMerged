@@ -25,8 +25,25 @@
 <!-- This Div holds our map -->
   <div class="container-fluid">
     <div class="col-lg-12 bg-info m-2 rounded" >
-      <div id="flip">Click for explanation of Map</div>
-      <div id="panel">Insert map explanation</div>
+      <div id="flip1" style="font-weight: bold;">Click for explanation of Map</div>
+      <div id="panel1">Major league sports are an integral part of many American lives. However, not all sports are 
+        equally popular in all cities. For example, the Green Bay Packers are a wildly successful football team in Wisconsin, 
+        but Wisconsin has no NHL team and no corresponding popularity of major league hockey. We are interested in analyzing 
+        the relative popularity of each of the “Big 4” sports, (hockey, baseball, football, and basketball) in major 
+        American cities and unearthing patterns in where some sports are more or less popular than others. On this large scale, 
+        we will use seasonwide attendance to games as a metric to score relative popularity; and we will also compare average 
+        ticket prices for teams' games across the four sports. Due to the implications of the Coronavirus pandemic, our professional 
+        sport teams' season data will be accesd from the 2018 and 2019 seasons. It's important to note that some sports have seasons 
+        that span across two calendar years, such as the hockey, basketball and football seasons.
+      </div>
+      <div id = "flip2" style = "font-weight: bold;">Click for explanation of circle sizing </div>
+      <div id = "panel2"> Each circle you see on the map was sized the same way--taking the given sport's season-wide attendance 
+        for the 2018-2019 season, and multiplying it by 0.06, so that all the circles are scaled in the same way. 
+      </div>
+      <div id = "flip3" style = "font-weight: bold;">Click for explanation of circle colors </div>
+      <div id = "panel3"> To offer another method to interpret the graph, lighter colored circles represent a lower season-wide attendance
+        for a given city and sport, and darker colored circles represent a higher season-wide attendance.  
+      </div>
     </div>
   </div>
   <div class="container-fluid">
@@ -42,8 +59,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script> 
     $(document).ready(function(){
-      $("#flip").click(function(){
-        $("#panel").slideToggle("slow");
+      $("#flip1").click(function(){
+        $("#panel1").slideToggle("slow");
+      });
+    });
+    $(document).ready(function(){
+      $("#flip2").click(function(){
+        $("#panel2").slideToggle("slow");
+      });
+    });
+    $(document).ready(function(){
+      $("#flip3").click(function(){
+        $("#panel3").slideToggle("slow");
       });
     });
     </script>

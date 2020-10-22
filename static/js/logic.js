@@ -1,7 +1,7 @@
 //try to read in nfl data
 
 
-d3.json("http://127.0.0.1:5000/api/v1.0/sports_attendance").then(function(sportsdata) {
+d3.json("https://sports-popularity-du.herokuapp.com/api/v1.0/sports_attendance/").then(function(sportsdata) {
     // Check the data 
     //TO ACCESS MLB DATA AT HIGHEST LEVEL: sportsdata.mlb, then iterate from there
     //OTHER DATA SHOULD FOLLOW SUIT: sportsdata.nfl, sportsdata.nhl, etc. 
