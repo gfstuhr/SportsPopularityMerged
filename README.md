@@ -1,5 +1,5 @@
 # Sports Popularity
-![map](images/map.PNG)
+![map](images/map.png)
 
 
 # **Summary of Interests and Intent**
