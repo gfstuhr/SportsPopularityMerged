@@ -111,7 +111,7 @@ d3.json("https://sports-popularity-du.herokuapp.com/api/v1.0/sports_attendance/"
                 fillColor: nba_color,
                 radius: sportsdata.nba[i].Total_attendance*0.06
             })
-            .bindPopup(`<h3> ${sportsdata.nba[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.nba[i].attendance} </h4>`)
+            .bindPopup(`<h3> ${sportsdata.nba[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.nba[i].Total_attendance} </h4>`)
         );
     };
 
@@ -182,7 +182,7 @@ d3.json("https://sports-popularity-du.herokuapp.com/api/v1.0/sports_attendance/"
                 fillColor: "green",
                 radius: 50000
             })
-            .bindPopup(`<h3> ${sportsdata.nba_tickets[i].Team} </h3><hr> <h4> Ticket Prices: ${sportsdata.nba_tickets[i].tic_price} </h4>`)
+            .bindPopup(`<h3> ${sportsdata.nba_tickets[i].team} </h3><hr> <h4> Ticket Prices: ${sportsdata.nba_tickets[i].tic_price} </h4>`)
         );
     };
 
