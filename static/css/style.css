@@ -37,13 +37,13 @@ ul {
   margin: 0;
 }
 
-#panel, #flip {
+#panel1,#panel2,#panel3, #flip {
   padding: 5px;
   text-align: center;
   background-color: #17a2b8!important;
 }
 
-#panel {
+#panel1,#panel2,#panel3 {
   padding: 50px;
   display: none;
 }
