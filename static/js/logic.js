@@ -111,7 +111,7 @@ d3.json("https://sports-popularity-du.herokuapp.com/api/v1.0/sports_attendance/"
                 fillColor: nba_color,
                 radius: sportsdata.nba[i].Total_attendance*0.06
             })
-            .bindPopup(`<h3> ${sportsdata.nba[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.mlb[i].attendance} </h4>`)
+            .bindPopup(`<h3> ${sportsdata.nba[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.nba[i].Total_attendance} </h4>`)
         );
     };
 

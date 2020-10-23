@@ -4,14 +4,14 @@ from flask_cors import CORS, cross_origin
 
 #Import dependencies for queries to include in endpoints
 ############################
-from matplotlib import style
-style.use('seaborn')
-import matplotlib.pyplot as plt   
-import numpy as np                          
+# from matplotlib import style
+# style.use('seaborn')
+# import matplotlib.pyplot as plt   
+# import numpy as np                          
 import pandas as pd
-import datetime as dt
-import pprint as pp
-from datetime import timedelta
+# import datetime as dt
+# import pprint as pp
+# from datetime import timedelta
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
