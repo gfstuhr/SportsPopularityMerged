@@ -111,14 +111,98 @@ d3.json("https://sports-popularity-du.herokuapp.com/api/v1.0/sports_attendance/"
                 fillColor: nba_color,
                 radius: sportsdata.nba[i].Total_attendance*0.06
             })
-            .bindPopup(`<h3> ${sportsdata.nba[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.mlb[i].attendance} </h4>`)
+            .bindPopup(`<h3> ${sportsdata.nba[i].Team} </h3><hr> <h4> Attendance: ${sportsdata.nba[i].attendance} </h4>`)
         );
     };
 
     //for loop for nhl data: 
+    //for loop for nhl data: 
+    for(var i = 0; i<sportsdata.nhl.length; i++){
+        var nhl_color = "";
+        if (sportsdata.nhl[i].Total_attendance > 800000 && sportsdata.nhl[i].Total_attendance < 900000) {
+            nhl_color = "#fee5d9";
+        }
+        else if (sportsdata.nhl[i].Total_attendance > 900000 && sportsdata.nhl[i].Total_attendance < 1000000) {
+            nhl_color = "#fcae91";
+        }
+        else if (sportsdata.nhl[i].Total_attendance > 1000000 && sportsdata.nhl[i].Total_attendance < 1100000) {
+            nhl_color = "#fb6a4a";
+        }
+        else if (sportsdata.nhl[i].Total_attendance > 1100000) {
+            nhl_color = "#cb181d";
+        }
+        else {
+            nhl_color = "red";
+        }
+        nhl_data.push(
+            L.circle([sportsdata.nhl[i].lat, sportsdata.nhl[i].long], {
+                fillOpacity: 0.75,
+                color: "white",
+                fillColor: nhl_color,
+                radius: sportsdata.nhl[i].attendance*0.06
+            })
+            .bindPopup(`<h3> ${sportsdata.nhl[i].team} </h3><hr> <h4> Attendance: ${sportsdata.nhl[i].attendance} </h4>`)
+        );
+    };
 
-        
+    //nfl price data 
+    for(var i = 1; i<sportsdata.nfl_tickets.length; i++){
+        //Putting Price NFL
+        nfl_price.push(
+            L.circle([sportsdata.nfl_tickets[i].lat, sportsdata.nfl_tickets[i].long], {
+            fillOpacity: 0.75,
+            color: "white",
+            fillColor: "green",
+            radius: 50000
+        }) 
+        .bindPopup(`<h3> ${sportsdata.nfl_tickets[i].team} </h3><hr> <h4> Ticket Price: ${sportsdata.nfl_tickets[i].tic_price} </h4>`)
+        );
+    };
 
+    //nhl price data
+    for(var i = 1; i<sportsdata.mlb_tickets.length; i++){
+ 
+        //Putting Price MLB
+        mlb_price.push(
+            L.circle([sportsdata.mlb_tickets[i].lat, sportsdata.mlb_tickets[i].long], {
+            fillOpacity: 0.75,
+            color: "white",
+            fillColor: "green",
+            radius: 50000
+        }) .bindPopup(`<h3> ${sportsdata.mlb_tickets[i].team} </h3><hr> <h4> Ticket Price: ${sportsdata.mlb_tickets[i].tic_price} </h4>`));
+    };
+
+    //nba price data
+    for(var i = 1; i<sportsdata.nba_tickets.length; i++){
+        //Putting Price NBA
+            nba_price.push(
+            L.circle([sportsdata.nba_tickets[i].lat, sportsdata.nba_tickets[i].long], {
+                fillOpacity: 0.75,
+                color: "white",
+                fillColor: "green",
+                radius: 50000
+            })
+            .bindPopup(`<h3> ${sportsdata.nba_tickets[i].Team} </h3><hr> <h4> Ticket Prices: ${sportsdata.nba_tickets[i].tic_price} </h4>`)
+        );
+    };
+
+    //nhl ticket prices
+// ​    for(var i = 0; i<sportsdata.nhl_tickets.length; i++){
+//     //Putting Price NHL
+//         nhl_prices.push(
+//         L.circle([sportsdata.nhl_tickets[i].Lat, sportsdata.nhl_tickets[i].Lng], {
+//             fillOpacity: 0.75,
+//             color: "white",
+//             fillColor: nba_color,
+//             radius: sportsdata.nhl_tickets[i].tic_price*0.06
+//         })
+//         .bindPopup(`<h3> ${sportsdata.nhl[i].Team} </h3><hr> <h4> Ticket Prices: ${sportsdata.nhl[i].tic_price} </h4>`)
+//     );
+//     };
+
+
+
+console.log(parseInt(sportsdata.nfl_tickets[1].tic_price));
     //make nfl data layer 
     var nfl = L.layerGroup(nfl_data);
 
@@ -171,12 +255,12 @@ d3.json("https://sports-popularity-du.herokuapp.com/api/v1.0/sports_attendance/"
     var overlayMaps = {
         NFL: nfl,
         MLB: mlb,
-        // NHL: nhl,
+        NHL: nhl,
         NBA: nba,
-        // "NFL Prices": nfl_prices,
-        // "MLB Prices": mlb_prices,
+        "NFL Prices": nfl_prices,
+        "MLB Prices": mlb_prices,
         // "NHL Prices": nhl_prices,
-        // "NBA Prices": nba_prices
+        "NBA Prices": nba_prices
     };
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load
